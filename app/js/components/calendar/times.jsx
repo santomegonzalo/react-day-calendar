@@ -9,84 +9,39 @@ from 9am to 12pm but that it's not on this scope
 import React from 'react';
 
 const CalendarTimesComponent = React.createClass({
+    getDefaultProps() {
+        return {
+            start: 9,
+            end: 21
+        };
+    },
+
     render() {
+        let _times = [];
+
+        for( let i = this.props.start; i <= this.props.end; i++ ) {
+            let _target = i <= 12 ? 'AM':'PM';
+            let _hour = i;
+
+            if( _hour > 12 ) {
+                _hour = _hour - 12;
+            }
+
+            _times.push(
+                <div className="times-hours" key={`time_key_${i}`}>
+                    {`${_hour}:00`} <span>{_target}</span>
+                </div>
+            );
+            _times.push(
+                <div className="times-half" key={`time_half_key_${i}`}>
+                    {`${_hour}:30`}
+                </div>
+            );
+        }
+
         return (
             <div className="calendar-times">
-                <div className="times-hours">
-                    9:00 <span>AM</span>
-                </div>
-                <div className="times-half">
-                    9:30
-                </div>
-                <div className="times-hours">
-                    10:00 <span>AM</span>
-                </div>
-                <div className="times-half">
-                    10:30
-                </div>
-                <div className="times-hours">
-                    11:00 <span>AM</span>
-                </div>
-                <div className="times-half">
-                    11:30
-                </div>
-                <div className="times-hours">
-                    12:00 <span>PM</span>
-                </div>
-                <div className="times-half">
-                    12:30
-                </div>
-                <div className="times-hours">
-                    1:00 <span>PM</span>
-                </div>
-                <div className="times-half">
-                    1:30
-                </div>
-                <div className="times-hours">
-                    2:00 <span>PM</span>
-                </div>
-                <div className="times-half">
-                    2:30
-                </div>
-                <div className="times-hours">
-                    3:00 <span>PM</span>
-                </div>
-                <div className="times-half">
-                    3:30
-                </div>
-                <div className="times-hours">
-                    4:00 <span>PM</span>
-                </div>
-                <div className="times-half">
-                    4:30
-                </div>
-                <div className="times-hours">
-                    5:00 <span>PM</span>
-                </div>
-                <div className="times-half">
-                    5:30
-                </div>
-                <div className="times-hours">
-                    6:00 <span>PM</span>
-                </div>
-                <div className="times-half">
-                    6:30
-                </div>
-                <div className="times-hours">
-                    7:00 <span>PM</span>
-                </div>
-                <div className="times-half">
-                    7:30
-                </div>
-                <div className="times-hours">
-                    8:00 <span>PM</span>
-                </div>
-                <div className="times-half">
-                    8:30
-                </div>
-                <div className="times-hours">
-                    9:00 <span>PM</span>
-                </div>
+                {_times}
             </div>
         );
     }

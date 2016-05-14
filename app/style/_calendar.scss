@@ -1,11 +1,11 @@
 .calendar {
-    margin-top: 50px;   //just to move out of the borders
-    margin-left: 50px;
+    margin: 50px;
+    display: flex;
     
     .calendar-times {
+        flex-grow: 0;
         margin-top: -4px;
         width: 80px;
-        display: inline-block;
         vertical-align: top;
         text-align: right;
         margin-right: 10px;
@@ -33,8 +33,8 @@
     }
 
     .calendar-container {
-        display: inline-block;
-        width: 600px;
+        flex-grow: 1;
+        width: 100%;
         height: 720px;
         border: 2px solid #efefef;
         border-radius: 1px;
@@ -45,7 +45,8 @@
             
             height: 60px;
             border-top: 2px solid #efefef;
-            
+            width: 100%;
+
             &:first-child {
                 border-top: 0px;
             }
@@ -64,17 +65,18 @@
             .calendar-event {
                 @include box-sizing();
 
+                cursor: pointer;
                 padding: 9px 17px;
                 position: absolute;
                 width: 100%;
                 background-color: #f4f4f4;
-                border-radius: 1px;
-                border-left: 8px solid #4cb591;
+                border-radius: 3px;
+                border-left: 8px solid #FF7171;
                 overflow: hidden;
 
                 h1 {
                     margin: 0px;
-                    color: #4cb591;
+                    color: #FF7171;
                     font-size: 15px;
                     font-family: 'PT Sans Narrow', Arial;
                     font-weight: 400;
