@@ -1,0 +1,92 @@
+.calendar {
+    margin-top: 50px;   //just to move out of the borders
+    margin-left: 50px;
+    
+    .calendar-times {
+        margin-top: -4px;
+        width: 80px;
+        display: inline-block;
+        vertical-align: top;
+        text-align: right;
+        margin-right: 10px;
+        font-family: 'PT Sans Narrow', Arial;
+        
+        .times-hours {
+            font-weight: bold;
+            font-size: 14px;
+            color: #494a4d;
+            line-height: 12px;
+            
+            span {
+                margin-left: 5px;
+                color: #c0c0c0;
+                font-size: 10px;
+            }
+        }
+        
+        .times-half {
+            color: #c0c0c0;
+            font-size: 10px;
+            line-height: 8px;
+            margin: 19.5px 0px;
+        }
+    }
+
+    .calendar-container {
+        display: inline-block;
+        width: 600px;
+        height: 720px;
+        border: 2px solid #efefef;
+        border-radius: 1px;
+        position: relative;
+        
+        .container-hours {
+            @include box-sizing();
+            
+            height: 60px;
+            border-top: 2px solid #efefef;
+            
+            &:first-child {
+                border-top: 0px;
+            }
+        }
+
+        .calendar-container-events {
+            @include box-sizing();
+
+            position: absolute;
+            overflow: hidden;
+            height: 100%;
+            left: 10px;
+            right: 6px;
+            top: 0px;
+
+            .calendar-event {
+                @include box-sizing();
+
+                padding: 9px 17px;
+                position: absolute;
+                width: 100%;
+                background-color: #f4f4f4;
+                border-radius: 1px;
+                border-left: 8px solid #4cb591;
+                overflow: hidden;
+
+                h1 {
+                    margin: 0px;
+                    color: #4cb591;
+                    font-size: 15px;
+                    font-family: 'PT Sans Narrow', Arial;
+                    font-weight: 400;
+                }
+
+                span {
+                    font-size: 12px;
+                    color: #c6c6c6;
+                    font-family: 'PT Sans Narrow', Arial;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
