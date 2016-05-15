@@ -9,14 +9,15 @@ from 9am to 12pm but that it's not on this scope
 import React from 'react';
 
 const CalendarTimesComponent = React.createClass({
-    getDefaultProps() {
-        return {
-            start: 9,
-            end: 21
-        };
+    render() {
+        return (
+            <div className="calendar-times">
+                {this._times()}
+            </div>
+        );
     },
 
-    render() {
+    _times() {
         let _times = [];
 
         for( let i = this.props.start; i <= this.props.end; i++ ) {
@@ -38,12 +39,10 @@ const CalendarTimesComponent = React.createClass({
                 </div>
             );
         }
+        //removing the last :30
+        _times.pop();
 
-        return (
-            <div className="calendar-times">
-                {_times}
-            </div>
-        );
+        return _times;
     }
 });
 

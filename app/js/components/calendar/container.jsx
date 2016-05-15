@@ -10,25 +10,24 @@ import React from 'react';
 import EventsComponent from './events';
 
 const CalendarContainerComponent = React.createClass({
-    
+
     render() {
         return (
             <div className="calendar-container">
-                <div className="container-hours"></div>
-                <div className="container-hours"></div>
-                <div className="container-hours"></div>
-                <div className="container-hours"></div>
-                <div className="container-hours"></div>
-                <div className="container-hours"></div>
-                <div className="container-hours"></div>
-                <div className="container-hours"></div>
-                <div className="container-hours"></div>
-                <div className="container-hours"></div>
-                <div className="container-hours"></div>
-                <div className="container-hours"></div>
+                {this._rows()}
                 <EventsComponent />
             </div>
         );
+    },
+
+    _rows() {
+        let _rows = [];
+
+        for( let i = 0; i < this.props.end - this.props.start; i++ ) {
+            _rows.push(<div className="container-hours" key={`key_row_${i}`}></div>);
+        }
+
+        return _rows;
     }
 });
 
