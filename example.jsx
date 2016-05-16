@@ -1,12 +1,10 @@
 
-require('../style/main.scss');
-
 'use strict';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import CalendarComponent from './components/calendar';
+import CalendarComponent from './src/calendar';
 
 /* Initializing the Calendar Component */
 ReactDOM.render((

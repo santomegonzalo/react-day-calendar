@@ -1,5 +1,7 @@
 'use strict';
 
+require('../assets/style/main.scss');
+
 import React from 'react';
 
 import Times from './calendar/times';

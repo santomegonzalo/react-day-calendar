@@ -4,13 +4,10 @@
     box-sizing: border-box;
 }
 
-body {
+section#calendar {    
     font-family: Helvetica, Arial;
     font-size: 12px;
     color: #000;
-    background-color: #FFF;
-}
 
-section#calendar {    
     @import '_calendar';
 }

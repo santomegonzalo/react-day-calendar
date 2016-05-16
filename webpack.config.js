@@ -7,19 +7,19 @@ module.exports = {
 	entry: {
 		app: [
 			'webpack/hot/dev-server', 
-			'./app/js/app.jsx'
+			'./src/calendar.jsx'
 		]
 	},
 	output: {
-		path: './public/js/build',
-		filename: 'main.js'
+		path: './lib',
+		filename: 'day-calendar.js'
 	},
 	devServer: {
 		contentBase: './public',
 		publicPath: 'http://localhost:8080/build/'
 	},
 	resolve: {
-		root: path.resolve('./app/js'),
+		root: path.resolve('./src'),
 		extensions: ['', '.js', '.jsx']
 	},
 	module: {
