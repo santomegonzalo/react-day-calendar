@@ -1,14 +1,15 @@
 {
-  "name": "Calendar",
-  "version": "1.0.0",
-  "companyName": "Calendar",
-  "description": "npm run watch - npm start",
-  "main": "main.js",
+  "name": "react-day-calendar",
+  "version": "1.0.2",
+  "companyName": "Gonzalo Santome",
+  "description": "React component to show a day like a calendar app",
+  "main": "index.js",
   "author": "Gonzalo Santome",
-  "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server"
-  },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "reactjs",
+    "calendar"
+  ],
   "devDependencies": {},
   "dependencies": {
     "autoprefixer": "^6.3.6",
