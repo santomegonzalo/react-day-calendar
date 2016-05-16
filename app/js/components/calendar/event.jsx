@@ -17,11 +17,11 @@ const CalendarContainerComponent = React.createClass({
     },
 
     render() {
-        var _style = {
+        const _style = {
             width: `calc(${100 / this.props.overlap}% - 4px)`,
             left: `${(100 / this.props.overlap) * this.props.position}%`,
-            top: this.props.event.get('start'),
-            height: this.props.event.get('end') - this.props.event.get('start')
+            top: this.props.event.start,
+            height: this.props.event.end - this.props.event.start
         };
 
         return (

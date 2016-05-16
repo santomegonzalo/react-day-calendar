@@ -15,13 +15,13 @@ const CalendarContainerComponent = React.createClass({
         return (
             <div className="calendar-container">
                 {this._rows()}
-                <EventsComponent />
+                <EventsComponent events={this.props.events}/>
             </div>
         );
     },
 
     _rows() {
-        let _rows = [];
+        const _rows = [];
 
         for( let i = 0; i < this.props.end - this.props.start; i++ ) {
             _rows.push(<div className="container-hours" key={`key_row_${i}`}></div>);
