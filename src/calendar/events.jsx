@@ -20,7 +20,7 @@ const CalendarEventsComponent = React.createClass({
                 const _events = this.props.events[key];
                 _eventsComponents = _eventsComponents.concat(_events.map((_event) => {
                     const _key = `event_key_${Math.random()}`;
-                    const _component = (<EventComponent event={_event} key={_key} overlap={_events.length} position={_position} title={_event.title} location={_event.location}/>);
+                    const _component = (<EventComponent event={_event} key={_key} overlap={_events.length} position={_position} title={_event.title} location={_event.location} onSelectEvent={this.props.onSelectEvent}/>);
                     _position++;
                     return _component;
                 }));

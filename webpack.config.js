@@ -4,19 +4,21 @@ var autoprefixer = require('autoprefixer');
 var precss = require('precss');
 
 module.exports = {
-	entry: {
-		app: [
-			'webpack/hot/dev-server', 
-			'./src/calendar.jsx'
-		]
-	},
+	cache: true,
+	entry: './src/calendar.jsx',
+	externals: [{
+	    "react": {
+	    	root: "React",
+	        commonjs2: "react",
+	        commonjs: "react",
+	        amd: "react"
+	    }
+	}],
 	output: {
 		path: './lib',
-		filename: 'day-calendar.js'
-	},
-	devServer: {
-		contentBase: './public',
-		publicPath: 'http://localhost:8080/build/'
+		filename: 'day-calendar.js',
+		library: "ReactDayCalendar",
+	    libraryTarget: "umd"
 	},
 	resolve: {
 		root: path.resolve('./src'),
@@ -44,6 +46,10 @@ module.exports = {
         return [precss, autoprefixer];
     },
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.DefinePlugin({
+    		// Signal production, so that webpack removes non-production code that
+    		// is in condtionals like: `if (process.env.NODE_ENV === "production")`
+    		"process.env.NODE_ENV": JSON.stringify("production")
+    	})
 	]
 }

@@ -15,7 +15,7 @@ const CalendarContainerComponent = React.createClass({
         return (
             <div className="calendar-container">
                 {this._rows()}
-                <EventsComponent events={this.props.events}/>
+                <EventsComponent events={this.props.events} onSelectEvent={this.props.onSelectEvent}/>
             </div>
         );
     },

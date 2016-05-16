@@ -25,11 +25,18 @@ const CalendarContainerComponent = React.createClass({
         };
 
         return (
-            <div className="calendar-event" style={_style}>
+            <div className="calendar-event" style={_style} onClick={this.handleSelectEvent}>
                 <h1>{this.props.title}</h1>
                 <span>{this.props.location}</span>
             </div>
         );
+    },
+
+    handleSelectEvent(e) {
+        e.preventDefault();
+        if( this.props.onSelectEvent ) {
+            this.props.onSelectEvent(this.props.event);
+        }
     }
 });
 
