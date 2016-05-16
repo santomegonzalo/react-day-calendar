@@ -1,6 +1,6 @@
 {
   "name": "react-day-calendar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "companyName": "Gonzalo Santome",
   "description": "React component to show a day like a calendar app",
   "main": "index.js",
