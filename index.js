@@ -1,2 +1,2 @@
-import DayCalendar from './lib/day-calendar';
-export default DayCalendar;
+'use strict';
+module.exports = require('./lib/day-calendar');
