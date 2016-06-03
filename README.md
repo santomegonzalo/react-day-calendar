@@ -1,4 +1,4 @@
-React Day Calendar
+React Day Calendar (On Development - WIP)
 =================
 
 [![NPM version][npm-image]][npm-url]
